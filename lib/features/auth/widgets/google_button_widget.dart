@@ -18,7 +18,7 @@ class GoogleButtonWidget extends StatelessWidget {
     return Material(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
-          side: const BorderSide(color: kRedColor, width: 2)),
+          side: const BorderSide(color: ColorManager.kRedColor, width: 2)),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
@@ -31,13 +31,13 @@ class GoogleButtonWidget extends StatelessWidget {
               children: [
                 Icon(
                   FontAwesomeIcons.google,
-                  color: kRedColor,
+                  color: ColorManager.kRedColor,
                 ),
                 Spacer(),
                 Text(
                   'SIGN IN WITH GOOGLE',
                   style: TextStyle(
-                      color: kRedColor,
+                      color: ColorManager.kRedColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
                 ),

@@ -1,15 +1,14 @@
+import 'package:betweener_app/router/navigation.dart';
+import 'package:betweener_app/router/router.dart';
+import 'package:betweener_app/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'core/util/constants.dart';
-import 'features/active_share/profile_friend.dart';
-import 'features/active_share/receive_view.dart';
-import 'features/auth/login_view.dart';
-import 'features/auth/register_view.dart';
-import 'features/home/home_view.dart';
-import 'features/main_app/main_app_view.dart';
-import 'features/onbording/onbording_view.dart';
-import 'features/profile/profile_view.dart';
+import 'locator.dart';
+
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupLocator();
   runApp(const MyApp());
 }
 
@@ -23,24 +22,18 @@ class MyApp extends StatelessWidget {
       title: 'Betweener',
       theme: ThemeData(
           useMaterial3: true,
-          colorSchemeSeed: kPrimaryColor,
+          colorSchemeSeed: ColorManager.kPrimaryColor,
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: kPrimaryColor),
+                color: ColorManager.kPrimaryColor),
           ),
-          scaffoldBackgroundColor: kScaffoldColor),
-      home: const OnBoardingView(),
-      routes: {
-        LoginView.id: (context) => LoginView(),
-        RegisterView.id: (context) => RegisterView(),
-        HomeView.id: (context) => const HomeView(),
-        MainAppView.id: (context) => const MainAppView(),
-        ProfileView.id: (context) => const ProfileView(),
-        ReceiveView.id: (context) => const ReceiveView(),
-        FriendProfileView.id: (context) => const FriendProfileView(),
-      },
+          scaffoldBackgroundColor: ColorManager.kScaffoldColor),
+      initialRoute: RoutesConstant.intro,
+      onGenerateRoute: RouteGenerator.generateRoute,
+      navigatorKey: locator<NavigationService>().navigatorKey,
+
     );
   }
 }

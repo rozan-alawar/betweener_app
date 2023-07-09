@@ -19,6 +19,7 @@ class _ReceiveViewState extends State<ReceiveView> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30),
@@ -77,6 +78,7 @@ class _ReceiveViewState extends State<ReceiveView> {
           ],
         ),
       ),
+
     );
   }
 }

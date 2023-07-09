@@ -1,3 +1,4 @@
+import 'package:betweener_app/core/util/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,6 +7,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: ColorManager.kDangerColor,
+    );
   }
 }
