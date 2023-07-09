@@ -1,16 +1,15 @@
-import 'package:bootcamp_flutter/features/active_share/profile_friend.dart';
-import 'package:bootcamp_flutter/features/active_share/receive_view.dart';
-import 'package:bootcamp_flutter/features/auth/login_view.dart';
-import 'package:bootcamp_flutter/features/auth/register_view.dart';
-import 'package:bootcamp_flutter/features/home/home_view.dart';
-import 'package:bootcamp_flutter/features/main_app/main_app_view.dart';
-import 'package:bootcamp_flutter/features/onbording/onbording_view.dart';
-import 'package:bootcamp_flutter/features/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'core/util/constants.dart';
+import 'features/active_share/profile_friend.dart';
+import 'features/active_share/receive_view.dart';
+import 'features/auth/login_view.dart';
+import 'features/auth/register_view.dart';
+import 'features/home/home_view.dart';
+import 'features/main_app/main_app_view.dart';
+import 'features/onbording/onbording_view.dart';
+import 'features/profile/profile_view.dart';
 
 void main() async {
-
   runApp(const MyApp());
 }
 
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Betweener',
@@ -41,8 +39,7 @@ class MyApp extends StatelessWidget {
         MainAppView.id: (context) => const MainAppView(),
         ProfileView.id: (context) => const ProfileView(),
         ReceiveView.id: (context) => const ReceiveView(),
-       profile_friend.id: (context) => const profile_friend(),
-     
+        FriendProfileView.id: (context) => const FriendProfileView(),
       },
     );
   }

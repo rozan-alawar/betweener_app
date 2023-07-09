@@ -1,4 +1,4 @@
-import 'package:bootcamp_flutter/features/active_share/profile_friend.dart';
+import '/features/active_share/profile_friend.dart';
 import 'package:flutter/material.dart';
 
 class ReceiveView extends StatefulWidget {
@@ -35,7 +35,7 @@ class _ReceiveViewState extends State<ReceiveView> {
             ),
             SizedBox(height: 20),
             Image(
-              image: AssetImage('assets/imgs/share.png'),
+              image: AssetImage('assets/imgs/activesharing.png'),
               width: MediaQuery.of(context).size.width * (1 / 3),
               height: MediaQuery.of(context).size.height * 0.24,
             ),
@@ -55,7 +55,8 @@ class _ReceiveViewState extends State<ReceiveView> {
                       ),
                       child: MaterialButton(
                         onPressed: () {
-                         Navigator.pushReplacementNamed(context, profile_friend.id);
+                          Navigator.pushReplacementNamed(
+                              context, FriendProfileView.id);
                         },
                         child: Row(
                           children: [
