@@ -3,9 +3,9 @@ import 'package:betweener_app/router/router.dart';
 import 'package:betweener_app/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'core/util/constants.dart';
 import 'locator.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: locator<NavigationService>().navigatorKey,
         ),
       ),
+    
     );
   }
 }
