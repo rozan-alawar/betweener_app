@@ -1,16 +1,15 @@
-import 'package:betweener_app/features/auth/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/util/assets.dart';
 import '../../core/widgets/custom_labeled_textfield_widget.dart';
 import '../../core/widgets/primary_outlined_button_widget.dart';
 import '../../core/widgets/secondary_button_widget.dart';
-import '../main_app/main_app_view.dart';
+import '../../locator.dart';
+import '../../router/navigation.dart';
+import '../../router/routes.dart';
 import 'widgets/google_button_widget.dart';
 
 class LoginView extends StatelessWidget {
-  static String id = '/loginView';
-
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -53,26 +52,30 @@ class LoginView extends StatelessWidget {
                 ),
                 SecondaryButtonWidget(
                     onTap: () {
-                      Navigator.pushNamed(context, MainAppView.id);
+                      locator<NavigationService>()
+                          .navigateToAndRemove(RoutesConstant.home);
                     },
                     text: 'LOGIN'),
                 const SizedBox(
                   height: 24,
                 ),
                 PrimaryOutlinedButtonWidget(
-                    onTap: () {
-                      Navigator.pushNamed(context, RegisterView.id);
-                    },
-                    text: 'REGISTER'),
+                  onTap: () {
+                    locator<NavigationService>()
+                        .navigateTo(RoutesConstant.register);
+                  },
+                  text: 'REGISTER',
+                ),
                 const SizedBox(
                   height: 12,
                 ),
                 Text(
                   '-  or  -',
                   style: TextStyle(
-                      color: Colors.grey.shade500,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w300),
+                    color: Colors.grey.shade500,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
                 const SizedBox(
                   height: 12,

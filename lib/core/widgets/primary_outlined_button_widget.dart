@@ -18,7 +18,7 @@ class PrimaryOutlinedButtonWidget extends StatelessWidget {
     return Material(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
-          side: const BorderSide(color: kPrimaryColor, width: 2)),
+          side: const BorderSide(color: ColorManager.kPrimaryColor, width: 2)),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
@@ -29,7 +29,7 @@ class PrimaryOutlinedButtonWidget extends StatelessWidget {
             child: Text(
               text,
               style: const TextStyle(
-                  color: kPrimaryColor,
+                  color: ColorManager.kPrimaryColor,
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
             ),

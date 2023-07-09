@@ -1,10 +1,12 @@
+import 'package:betweener_app/locator.dart';
+import 'package:betweener_app/router/navigation.dart';
+import 'package:betweener_app/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/util/assets.dart';
 import '../../core/util/constants.dart';
 import '../../core/widgets/secondary_button_widget.dart';
-import '../auth/login_view.dart';
 
 class OnBoardingView extends StatelessWidget {
   static String id = '/onBoardingView';
@@ -24,16 +26,18 @@ class OnBoardingView extends StatelessWidget {
             const Text(
               'Just one Scan for everything',
               style: TextStyle(
-                  fontSize: 16,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w600),
+                fontSize: 16,
+                color: ColorManager.kPrimaryColor,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             const Spacer(),
             SecondaryButtonWidget(
               text: 'Get Started',
               width: double.infinity,
               onTap: () {
-                Navigator.pushNamed(context, LoginView.id);
+                locator<NavigationService>()
+                    .navigateToAndRemove(RoutesConstant.login);
               },
             ),
             const Spacer()

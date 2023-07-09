@@ -19,7 +19,7 @@ class CustomFloatingNavBar extends StatelessWidget {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
-          backgroundColor: kPrimaryColor,
+          backgroundColor: ColorManager.kPrimaryColor,
           selectedItemColor: Colors.white,
           selectedIconTheme: const IconThemeData(size: 28),
           unselectedItemColor: Colors.grey.shade300,

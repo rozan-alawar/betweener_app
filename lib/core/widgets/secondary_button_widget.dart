@@ -17,7 +17,7 @@ class SecondaryButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(12),
-      color: kSecondaryColor,
+      color: ColorManager.kSecondaryColor,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
@@ -28,7 +28,7 @@ class SecondaryButtonWidget extends StatelessWidget {
             child: Text(
               text,
               style: const TextStyle(
-                  color: kOnSecondaryColor,
+                  color: ColorManager.kOnSecondaryColor,
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
             ),

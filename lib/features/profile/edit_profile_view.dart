@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ReceiveView extends StatelessWidget {
-  static String id = '/receiveView';
-
-  const ReceiveView({super.key});
+class EditProfileView extends StatelessWidget {
+  const EditProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
