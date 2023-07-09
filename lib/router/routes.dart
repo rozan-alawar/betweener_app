@@ -9,10 +9,9 @@ class RoutesConstant {
   static const String activeSharing = '/activeSharing';
 
   static const String editLink = '/editLink';
-  static const String deleteLink = '/deleteLink';
+  static const String addLink = '/addLink';
 
   static const String profile = '/profile';
   static const String editProfile = '/editProfile';
   static const String friendProfile = '/friendProfile';
-  
 }

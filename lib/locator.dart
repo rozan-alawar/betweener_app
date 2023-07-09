@@ -9,4 +9,5 @@ Future<void> setupLocator() async {
 //-------------------- services --------------------------
 
   locator.registerLazySingleton(() => NavigationService());
+
 }
