@@ -7,11 +7,11 @@ class ImagePath {
   static const authImage = 'assets/imgs/auth.svg';
   static const qrImage = 'assets/imgs/qr_code.png';
   static const userImage = 'assets/imgs/user.png';
-
+  static const QRCode = 'assets/imgs/QR Code.png';
 }
 
 class IconPath {
-   static const arrowBack = 'assets/imgs/arrow_back.svg';
-
+  static const arrowBack = 'assets/imgs/arrow_back.svg';
+  static const scann = 'assets/imgs/scann.svg';
+  static const search = 'assets/imgs/search.svg';
 }
-

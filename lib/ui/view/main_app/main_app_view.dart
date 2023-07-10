@@ -6,8 +6,6 @@ import '../home/home_view.dart';
 import '../profile/profile_view.dart';
 
 class MainAppView extends StatefulWidget {
-  static String id = '/mainAppView';
-
   const MainAppView({super.key});
 
   @override
@@ -26,11 +24,6 @@ class _MainAppViewState extends State<MainAppView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       body: screensList[_currentIndex],
       extendBody: true,
       bottomNavigationBar: CustomFloatingNavBar(

@@ -8,22 +8,29 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CommonAppBar({
     super.key,
     required this.title,
+    this.centerTitle = false,
+    this.withLeading = true,
   });
   final String title;
+  final bool centerTitle;
+  final bool withLeading;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: centerTitle,
       backgroundColor: ColorManager.kLightPrimaryColor,
-      leading: GestureDetector(
-        onTap: () {
-          locator<NavigationService>().pop();
-        },
-        child: const Icon(
-          Icons.arrow_back_ios_new,
-          color: ColorManager.kPrimaryColor,
-        ),
-      ),
+      leading: withLeading
+          ? GestureDetector(
+              onTap: () {
+                locator<NavigationService>().pop();
+              },
+              child: const Icon(
+                Icons.arrow_back_ios_new,
+                color: ColorManager.kPrimaryColor,
+              ),
+            )
+          : const SizedBox.shrink(),
       title: Text(title),
     );
   }

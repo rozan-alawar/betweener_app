@@ -19,25 +19,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
       builder: (context, child) => SafeArea(
-        child: 
-        MaterialApp(
+        child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Betweener',
           theme: ThemeData(
-              useMaterial3: true,
-              colorSchemeSeed: ColorManager.kPrimaryColor,
-              appBarTheme: const AppBarTheme(
-                titleTextStyle: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: ColorManager.kPrimaryColor),
-              ),
-              scaffoldBackgroundColor: ColorManager.kScaffoldColor),
+            useMaterial3: true,
+            colorSchemeSeed: ColorManager.kPrimaryColor,
+            appBarTheme: const AppBarTheme(
+              titleTextStyle: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: ColorManager.kPrimaryColor),
+            ),
+            scaffoldBackgroundColor: ColorManager.kScaffoldColor,
+          ),
           initialRoute: RouteConstants.intro,
           onGenerateRoute: RouteGenerator.generateRoute,
           navigatorKey: locator<NavigationService>().navigatorKey,
