@@ -1,11 +1,10 @@
-import 'package:betweener_app/router/navigation.dart';
-import 'package:betweener_app/router/router.dart';
-import 'package:betweener_app/router/routes.dart';
+import 'app/router/navigation_service.dart';
+import 'app/router/router.dart';
+import 'app/router/route_constants.dart';
+import 'app/util/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/util/constants.dart';
-import 'locator.dart';
-
+import 'app/locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +19,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return 
+    ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
       builder: (context, child) => SafeArea(
-        child: MaterialApp(
+        child: 
+        MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Betweener',
           theme: ThemeData(
@@ -37,12 +38,11 @@ class MyApp extends StatelessWidget {
                     color: ColorManager.kPrimaryColor),
               ),
               scaffoldBackgroundColor: ColorManager.kScaffoldColor),
-          initialRoute: RoutesConstant.intro,
+          initialRoute: RouteConstants.intro,
           onGenerateRoute: RouteGenerator.generateRoute,
           navigatorKey: locator<NavigationService>().navigatorKey,
         ),
       ),
-    
     );
   }
 }
