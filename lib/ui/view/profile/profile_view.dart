@@ -6,9 +6,9 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import '../../../app/locator.dart';
 import '../../../app/router/navigation_service.dart';
 import '../../../app/router/route_constants.dart';
-import '../../../app/util/assets_manager.dart';
-import '../../../app/util/color_manager.dart';
-import '../../../app/util/constants_manager.dart';
+import '../../../app/util/resources/assets_manager.dart';
+import '../../../app/util/resources/color_manager.dart';
+import '../../../app/util/resources/constants_manager.dart';
 import '../../customwidgets/sizedbox_custom.dart';
 
 class ProfileView extends StatelessWidget {

@@ -1,10 +1,10 @@
-import 'package:betweener_app/app/util/constants_manager.dart';
 import 'package:betweener_app/ui/customwidgets/common_app_bar_widget.dart';
 import 'package:betweener_app/ui/customwidgets/sizedbox_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../app/util/assets_manager.dart';
+import '../../../app/util/resources/assets_manager.dart';
+import '../../../app/util/resources/constants_manager.dart';
 import '../../customwidgets/common_user_card.dart';
 
 class FriendProfileView extends StatefulWidget {

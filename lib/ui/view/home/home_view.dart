@@ -1,11 +1,11 @@
-import 'package:betweener_app/app/util/assets_manager.dart';
-import 'package:betweener_app/app/util/color_manager.dart';
-import 'package:betweener_app/app/util/style_manager.dart';
+import 'package:betweener_app/app/util/resources/assets_manager.dart';
+import 'package:betweener_app/app/util/resources/color_manager.dart';
 import 'package:betweener_app/ui/customwidgets/sizedbox_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../app/util/resources/style_manager.dart';
 import '../../customwidgets/social_card.dart';
 
 class HomeView extends StatelessWidget {

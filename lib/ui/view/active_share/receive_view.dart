@@ -27,9 +27,7 @@ class _ReceiveViewState extends State<ReceiveView> {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           children: [
-            const CustomSizedBox(
-              height: 10,
-            ),
+            const CustomSizedBox(height: 20),
             const Text(
               'Active Sharing',
               style: TextStyle(
@@ -38,17 +36,13 @@ class _ReceiveViewState extends State<ReceiveView> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const CustomSizedBox(
-              height: 20,
-            ),
+            const CustomSizedBox(height: 40),
             Image(
               image: const AssetImage('assets/imgs/activesharing.png'),
               width: MediaQuery.of(context).size.width * (1 / 3),
               height: MediaQuery.of(context).size.height * 0.24,
             ),
-            const CustomSizedBox(
-              height: 10,
-            ),
+            const CustomSizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: users.length,
@@ -65,8 +59,8 @@ class _ReceiveViewState extends State<ReceiveView> {
                       ),
                       child: MaterialButton(
                         onPressed: () {
-                          locator<NavigationService>().navigateTo(RouteConstants.friendProfile);
-                         
+                          locator<NavigationService>()
+                              .navigateTo(RouteConstants.friendProfile);
                         },
                         child: Row(
                           children: [

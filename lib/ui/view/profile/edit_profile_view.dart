@@ -1,5 +1,5 @@
 import '../../customwidgets/custom_labeled_textfield_widget.dart';
-import '../../../app/util/assets_manager.dart';
+import '../../../app/util/resources/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../customwidgets/sizedbox_custom.dart';

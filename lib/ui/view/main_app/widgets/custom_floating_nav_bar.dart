@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../app/util/color_manager.dart';
+import '../../../../app/util/resources/color_manager.dart';
 
 class CustomFloatingNavBar extends StatelessWidget {
   final int currentIndex;

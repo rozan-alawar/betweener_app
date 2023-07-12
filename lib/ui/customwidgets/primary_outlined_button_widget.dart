@@ -1,5 +1,7 @@
+import 'package:betweener_app/app/util/resources/font_manager.dart';
 import 'package:flutter/material.dart';
-import '../../app/util/color_manager.dart';
+import '../../app/util/resources/color_manager.dart';
+import '../../app/util/resources/values_manager.dart';
 
 class PrimaryOutlinedButtonWidget extends StatelessWidget {
   final Function()? onTap;
@@ -16,20 +18,21 @@ class PrimaryOutlinedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-          side: const BorderSide(color: ColorManager.kPrimaryColor, width: 2)),
+          borderRadius: BorderRadius.circular(AppRadiusSize.r12),
+          side: BorderSide(
+              color: ColorManager.kPrimaryColor, width: AppWidthSize.w2)),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadiusSize.r12),
         child: SizedBox(
           width: width,
-          height: 50,
+          height: AppHeightSize.h50,
           child: Center(
             child: Text(
               text,
               style: const TextStyle(
                   color: ColorManager.kPrimaryColor,
-                  fontSize: 14,
+                  fontSize: FontSize.s14,
                   fontWeight: FontWeight.w500),
             ),
           ),

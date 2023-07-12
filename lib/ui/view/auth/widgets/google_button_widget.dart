@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../app/util/color_manager.dart';
+import '../../../../app/util/resources/color_manager.dart';
 
 
 class GoogleButtonWidget extends StatelessWidget {

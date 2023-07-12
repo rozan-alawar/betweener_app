@@ -1,10 +1,15 @@
+import 'package:betweener_app/app/util/resources/font_manager.dart';
+import 'package:betweener_app/app/util/resources/strings_manager.dart';
+
+import '../../../app/app_preferences.dart';
 import '../../../app/locator.dart';
 import '../../../app/router/navigation_service.dart';
 import '../../../app/router/route_constants.dart';
-import '../../../app/util/assets_manager.dart';
+import '../../../app/util/resources/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../app/util/color_manager.dart';
+import '../../../app/util/resources/color_manager.dart';
+import '../../../app/util/resources/values_manager.dart';
 import '../../customwidgets/secondary_button_widget.dart';
 
 class OnBoardingView extends StatelessWidget {
@@ -16,27 +21,30 @@ class OnBoardingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(AppPadding.p32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const Spacer(),
             SvgPicture.asset(ImagePath.onBoardingImage),
             const Text(
-              'Just one Scan for everything',
+              AppStrings.onBoardingDescText,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: FontSize.s16,
                 color: ColorManager.kPrimaryColor,
                 fontWeight: FontWeight.w600,
               ),
             ),
             const Spacer(),
             SecondaryButtonWidget(
-              text: 'Get Started',
+              text: AppStrings.onBoardingButtonText,
               width: double.infinity,
               onTap: () {
-                locator<NavigationService>()
-                    .navigateToAndRemove(RouteConstants.login);
+                locator<AppPreferences>().isUserLoggedIn()
+                    ? locator<NavigationService>()
+                        .navigateToAndRemove(RouteConstants.home)
+                    : locator<NavigationService>()
+                        .navigateToAndRemove(RouteConstants.login);
               },
             ),
             const Spacer()

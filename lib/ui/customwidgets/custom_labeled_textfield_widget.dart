@@ -1,20 +1,26 @@
+import 'package:betweener_app/ui/customwidgets/sizedbox_custom.dart';
 import 'package:flutter/material.dart';
 
-import '../../app/util/style_manager.dart';
+import '../../app/util/resources/style_manager.dart';
+import '../../app/util/resources/values_manager.dart';
 
 class PrimaryLabeledTextFieldWidget extends StatelessWidget {
   final String label;
   final String? hint;
   final TextEditingController? controller;
   final bool password;
+  final String? Function(String?)? validator;
   final TextInputType? keyboardType;
-  const PrimaryLabeledTextFieldWidget(
-      {super.key,
-      required this.label,
-      this.controller,
-      this.hint,
-      this.password = false,
-      this.keyboardType});
+
+  const PrimaryLabeledTextFieldWidget({
+    super.key,
+    required this.label,
+    this.controller,
+    this.hint,
+    this.password = false,
+    this.keyboardType,
+    this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +31,22 @@ class PrimaryLabeledTextFieldWidget extends StatelessWidget {
           label,
           style: getMediumStyle(),
         ),
-        const SizedBox(
-          height: 12,
+        CustomSizedBox(
+          height: AppHeightSize.h12,
         ),
-        SizedBox(
-          height: 50,
-          child: TextField(
-            keyboardType: keyboardType,
-            controller: controller,
-            obscureText: password,
-            enableSuggestions: password == true ? false : true,
-            autocorrect: password == true ? false : true,
-            decoration: InputDecoration(
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-              hintText: hint,
-             
+        TextFormField(
+          validator: validator,
+          keyboardType: keyboardType,
+          controller: controller,
+          obscureText: password,
+          enableSuggestions: password == true ? false : true,
+          autocorrect: password == true ? false : true,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: AppWidthSize.w12,
+              vertical: AppHeightSize.h12,
             ),
+            hintText: hint,
           ),
         ),
       ],

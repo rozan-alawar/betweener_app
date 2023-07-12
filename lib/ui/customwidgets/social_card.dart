@@ -1,9 +1,12 @@
+import 'package:betweener_app/app/router/route_constants.dart';
 import 'package:betweener_app/ui/customwidgets/sizedbox_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../app/util/color_manager.dart';
-import '../../app/util/style_manager.dart';
+import '../../app/locator.dart';
+import '../../app/router/navigation_service.dart';
+import '../../app/util/resources/color_manager.dart';
+import '../../app/util/resources/style_manager.dart';
 
 class SocialCard extends StatelessWidget {
   const SocialCard({
@@ -24,15 +27,20 @@ class SocialCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: index == 2
-          ? Column(
-              children: [
-                const Icon(Icons.add),
-                const CustomSizedBox(height: 10),
-                Text(
-                  'ADD MORE ',
-                  style: getMediumStyle(color: Colors.black),
-                ),
-              ],
+          ? InkWell(
+              onTap: () {
+                locator<NavigationService>().navigateTo(RouteConstants.addLink);
+              },
+              child: Column(
+                children: [
+                  const Icon(Icons.add),
+                  const CustomSizedBox(height: 10),
+                  Text(
+                    'ADD MORE ',
+                    style: getMediumStyle(color: Colors.black),
+                  ),
+                ],
+              ),
             )
           : Column(
               children: [

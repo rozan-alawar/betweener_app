@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/locator.dart';
 import '../../app/router/navigation_service.dart';
-import '../../app/util/color_manager.dart';
+import '../../app/util/resources/color_manager.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CommonAppBar({
