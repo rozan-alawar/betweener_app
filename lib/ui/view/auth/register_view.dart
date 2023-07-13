@@ -9,16 +9,28 @@ import '../../customwidgets/custom_labeled_textfield_widget.dart';
 import '../../customwidgets/secondary_button_widget.dart';
 import 'widgets/google_button_widget.dart';
 
-class RegisterView extends StatelessWidget {
-  final TextEditingController nameController =
-      TextEditingController(text: 'ss');
-  final TextEditingController emailController =
-      TextEditingController(text: 'ss@ss.com');
-  final TextEditingController passwordController =
-      TextEditingController(text: '123');
-  final formKey = GlobalKey<FormState>();
+class RegisterView extends StatefulWidget {
+  const RegisterView({super.key});
 
-  RegisterView({super.key});
+  @override
+  State<RegisterView> createState() => _RegisterViewState();
+}
+
+class _RegisterViewState extends State<RegisterView> {
+  late TextEditingController nameController;
+
+  late TextEditingController emailController;
+
+  late TextEditingController passwordController;
+
+  final formKey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    super.initState();
+    nameController = TextEditingController(text: 'ss');
+    emailController = TextEditingController(text: 'ss@ss.com');
+    passwordController = TextEditingController(text: '123');
+  }
 
   @override
   Widget build(BuildContext context) {
